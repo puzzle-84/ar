@@ -26,23 +26,24 @@ window.onload = () => {
                 lat: i.lat,
                 lng: i.long,
             },
+            ...i,
         }));
     }
 };
 var setModel = function (entity, model) {
     const scaleData = `${model.scale} ${model.scale} ${model.scale}`;
+    debugger;
     if (model.scale) {
         entity.setAttribute('scale', scaleData);
     }
 
     if (model.rotation) {
-        entity.setAttribute('rotation', rotation);
+        entity.setAttribute('rotation', model.rotation);
     }
 
     if (model.position) {
         entity.setAttribute('position', model.position);
     }
-
     entity.setAttribute('gltf-model', model.url);
 };
 
