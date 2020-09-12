@@ -8,13 +8,13 @@ window.onload = () => {
             // rotation: '0 0 0',
             url: './data/flag.gltf',
         },
-        // {
-        //     lat: 53.85176,
-        //     long: 27.490791,
-        //     scale: 4,
-        //     // rotation: '0 0 0',
-        //     url: './data/flag.gltf',
-        // },
+        {
+            lat: 53.85176,
+            long: 27.490791,
+            scale: 4,
+            // rotation: '0 0 0',
+            url: './data/flag.gltf',
+        },
         {
             lat: 53.85176,
             long: 27.490791,
