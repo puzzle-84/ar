@@ -1,4 +1,5 @@
 window.onload = () => {
+    // debugger;
     const coordinates = [
         {
             lat: 53.850547,
@@ -19,20 +20,17 @@ window.onload = () => {
     let places = staticLoadPlaces(coordinates);
     renderPlaces(places);
     function staticLoadPlaces(coordinates) {
-        return coordinates.map((i, index) => [
-            {
-                name: 'Gift' + index,
-                location: {
-                    lat: i.lat,
-                    lng: i.long,
-                },
+        return coordinates.map((i, index) => ({
+            name: 'Gift' + index,
+            location: {
+                lat: i.lat,
+                lng: i.long,
             },
-        ]);
+        }));
     }
 };
 var setModel = function (entity, model) {
-    const scale = document.querySelector('#scale').value;
-    const scaleData = `${scale} ${scale} ${scale}`;
+    const scaleData = `${model.scale} ${model.scale} ${model.scale}`;
     if (model.scale) {
         entity.setAttribute('scale', scaleData);
     }
