@@ -1,7 +1,19 @@
 window.onload = () => {
     const coordinates = [
-        { lat: 53.850547, long: 27.491427 },
-        { lat: 53.850547, long: 27.491427 },
+        {
+            lat: 53.850547,
+            long: 27.491427,
+            scale: 2,
+            rotation: '0 0 0',
+            url: './data/flag.gltf',
+        },
+        {
+            lat: 53.850547,
+            long: 27.491427,
+            scale: 2,
+            rotation: '0 0 0',
+            url: './data/flag.gltf',
+        },
         { lat: 53.850547, long: 27.491427, text: 'test' },
     ];
     let places = staticLoadPlaces(coordinates);
@@ -18,6 +30,23 @@ window.onload = () => {
         ]);
     }
 };
+var setModel = function (entity, model) {
+    const scale = document.querySelector('#scale').value;
+    const scaleData = `${scale} ${scale} ${scale}`;
+    if (model.scale) {
+        entity.setAttribute('scale', scaleData);
+    }
+
+    if (model.rotation) {
+        entity.setAttribute('rotation', rotation);
+    }
+
+    if (model.position) {
+        entity.setAttribute('position', model.position);
+    }
+
+    entity.setAttribute('gltf-model', model.url);
+};
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
@@ -27,6 +56,7 @@ function renderPlaces(places) {
             'gps-entity-place',
             `latitude: ${place.location.lat}; longitude: ${place.location.lng};`,
         );
+        setModel(model, place);
         model.setAttribute('animation-mixer', '');
         scene.appendChild(model);
     });
