@@ -16,11 +16,11 @@ window.onload = () => {
             url: './data/flag.gltf',
         },
         {
-            lat: 53.85145,
+            lat: 53.851622,
+            long: 27.491657,
             scale: 120,
-            long: 27.492497,
             type: 'text',
-            value: 'test',
+            value: 'test-test-test',
         },
     ];
     let places = staticLoadPlaces(coordinates);
