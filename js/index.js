@@ -15,7 +15,13 @@ window.onload = () => {
             rotation: '0 0 0',
             url: './data/flag.gltf',
         },
-        { lat: 53.850547, long: 27.491427, text: 'test' },
+        {
+            lat: 53.85145,
+            scale: 120,
+            long: 27.492497,
+            type: 'text',
+            value: 'test',
+        },
     ];
     let places = staticLoadPlaces(coordinates);
     renderPlaces(places);
@@ -43,13 +49,21 @@ var setModel = function (entity, model) {
     if (model.position) {
         entity.setAttribute('position', model.position);
     }
-    entity.setAttribute('gltf-model', model.url);
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
     places.forEach((place) => {
-        let model = document.createElement('a-entity');
+        let model;
+        if (place.type === 'text') {
+            model = document.createElement('a-text');
+            model.setAttribute('value', place.value);
+            model.setAttribute('look-at', '[gps-camera]');
+        } else {
+            model = document.createElement('a-entity');
+            model.setAttribute('look-at', '[gps-camera]');
+            model.setAttribute('gltf-model', place.url);
+        }
         model.setAttribute(
             'gps-entity-place',
             `latitude: ${place.location.lat}; longitude: ${place.location.lng};`,
