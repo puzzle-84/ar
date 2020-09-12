@@ -8,19 +8,19 @@ window.onload = () => {
             // rotation: '0 0 0',
             url: './data/flag.gltf',
         },
+        // {
+        //     lat: 53.85176,
+        //     long: 27.490791,
+        //     scale: 4,
+        //     // rotation: '0 0 0',
+        //     url: './data/flag.gltf',
+        // },
         {
             lat: 53.85176,
             long: 27.490791,
-            scale: 4,
-            // rotation: '0 0 0',
-            url: './data/flag.gltf',
-        },
-        {
-            lat: 53.851622,
-            long: 27.491657,
             scale: 120,
             type: 'text',
-            value: 'test-test-test',
+            value: 'No markers around',
         },
     ];
     let places = staticLoadPlaces(coordinates);
@@ -41,7 +41,6 @@ var setModel = function (entity, model) {
     if (model.scale) {
         entity.setAttribute('scale', scaleData);
     }
-
     if (model.rotation) {
         entity.setAttribute('rotation', model.rotation);
     }
@@ -58,18 +57,17 @@ function renderPlaces(places) {
         if (place.type === 'text') {
             model = document.createElement('a-text');
             model.setAttribute('value', place.value);
-            model.setAttribute('look-at', '[gps-camera]');
         } else {
             model = document.createElement('a-entity');
             model.setAttribute('look-at', '[gps-camera]');
-            model.setAttribute('gltf-model', place.url);
         }
+        model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute(
             'gps-entity-place',
             `latitude: ${place.location.lat}; longitude: ${place.location.lng};`,
         );
-        setModel(model, place);
         model.setAttribute('animation-mixer', '');
+        setModel(model, place);
         scene.appendChild(model);
     });
 }
