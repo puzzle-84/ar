@@ -1,0 +1,14 @@
+{
+    "settings": {},
+    "extends": ["eslint:recommended"],
+    "env": {
+        "browser": true
+    },
+    "plugins": [],
+
+    "rules": {
+        "no-console": 1,
+        "no-debugger": 1,
+        "no-unused-vars": 1
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "devDependencies": {
+        "babel-eslint": "^10.1.0"
+    },
+    "script": {
+        "lint": "eslint"
+    },
+    "name": "ar_",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/puzzle-84/ar.git",
+    "author": "Petrashka <piotrazsko@gmail.com>",
+    "license": "MIT"
+}
