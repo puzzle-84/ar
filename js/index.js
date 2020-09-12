@@ -1,7 +1,6 @@
 const  coordinates = [{lat:53.850547,long:27.491427,},{lat:53.850547,long:27.491427,},{lat:53.850547,long:27.491427,text:'test'}]
 window.onload = () => {
-  const button = document.querySelector('button[data-action="change"]');
-  button.innerText = "﹖";
+  
   navigator.geolocation.getCurrentPosition(success);
   function success(position) {
     const latitude = position.coords.latitude;
