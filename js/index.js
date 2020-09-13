@@ -5,16 +5,16 @@ window.onload = () => {
             lat: 53.850547,
             long: 27.491427,
             scale: 4,
-            // rotation: '0 0 0',
+            rotation: '0 0 0',
             url: './data/flag.gltf',
         },
-        {
-            lat: 53.85176,
-            long: 27.490791,
-            scale: 4,
-            // rotation: '0 0 0',
-            url: './data/flag.gltf',
-        },
+        // {
+        //     lat: 53.85176,
+        //     long: 27.490791,
+        //     scale: 4,
+        //     rotation: '0 0 0',
+        //     url: './data/flag.gltf',
+        // },
         {
             lat: 53.85176,
             long: 27.490791,
@@ -59,7 +59,6 @@ function renderPlaces(places) {
             model.setAttribute('value', place.value);
         } else {
             model = document.createElement('a-entity');
-            model.setAttribute('look-at', '[gps-camera]');
         }
         model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute(

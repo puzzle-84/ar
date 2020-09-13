@@ -10,5 +10,9 @@
     "main": "index.js",
     "repository": "https://github.com/puzzle-84/ar.git",
     "author": "Petrashka <piotrazsko@gmail.com>",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "-": "^0.0.1",
+        "standard": "^14.3.4"
+    }
 }

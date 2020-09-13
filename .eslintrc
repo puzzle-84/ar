@@ -4,6 +4,14 @@
     "env": {
         "browser": true
     },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": "es2020",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
     "plugins": [],
 
     "rules": {
