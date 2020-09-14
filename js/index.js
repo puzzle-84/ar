@@ -1,5 +1,4 @@
 window.onload = () => {
-    // debugger;
     const coordinates = [
         {
             lat: 53.850547,
@@ -19,6 +18,20 @@ window.onload = () => {
             scale: 90,
             type: 'text',
             value: 'Belarus forever!',
+        },
+        {
+            lat: 53.854603,
+            long: 27.492792,
+            scale: 90,
+            type: 'text',
+            value: 'Park Konoha!',
+        },
+        {
+            lat: 53.851336,
+            long: 27.491821,
+            scale: 10,
+            type: 'text',
+            value: 'We believe! We can! We will win!',
         },
     ];
 
