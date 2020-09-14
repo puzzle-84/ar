@@ -19,8 +19,8 @@ window.onload = () => {
             lat: 53.85176,
             long: 27.490791,
             scale: 120,
-            type: 'testaksjdd aldskj alsdjaldsk a',
-            value: 'No markers around',
+            type: 'text',
+            value: 'Жыве Беларусь!',
         },
     ];
 
