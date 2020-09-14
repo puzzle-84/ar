@@ -19,56 +19,47 @@ window.onload = () => {
             lat: 53.85176,
             long: 27.490791,
             scale: 120,
-            type: 'text',
+            type: 'testaksjdd aldskj alsdjaldsk a',
             value: 'No markers around',
         },
     ];
-    let places = staticLoadPlaces(coordinates);
-    renderPlaces(places);
-    function staticLoadPlaces(coordinates) {
-        return coordinates.map((i, index) => ({
-            name: 'Gift' + index,
-            location: {
-                lat: i.lat,
-                lng: i.long,
-            },
-            ...i,
-        }));
-    }
-};
-var setModel = function (entity, model) {
-    const scaleData = `${model.scale} ${model.scale} ${model.scale}`;
-    if (model.scale) {
-        entity.setAttribute('scale', scaleData);
-    }
-    if (model.rotation) {
-        entity.setAttribute('rotation', model.rotation);
-    }
 
-    if (model.position) {
-        entity.setAttribute('position', model.position);
-    }
-};
+    renderPlaces(coordinates);
 
-function renderPlaces(places) {
-    let scene = document.querySelector('a-scene');
-    places.forEach((place) => {
-        let model;
-        if (place.type === 'text') {
-            model = document.createElement('a-text');
-            model.setAttribute('value', place.value);
-        } else {
-            model = document.createElement('a-entity');
-            model.setAttribute('gltf-model', place.url);
+    var setModel = function (model) {
+        const entity =
+            model.type === 'text'
+                ? document.createElement('a-text')
+                : document.createElement('a-entity');
+        const scaleData = `${model.scale} ${model.scale} ${model.scale}`;
+        if (model.scale) {
+            entity.setAttribute('scale', scaleData);
         }
-        model.setAttribute('look-at', '[gps-camera]');
-        model.setAttribute(
+        if (model.rotation) {
+            entity.setAttribute('rotation', model.rotation);
+        }
+
+        if (model.position) {
+            entity.setAttribute('position', model.position);
+        }
+        if (model.type === 'text') {
+            entity.setAttribute('value', model.value);
+            entity.setAttribute('look-at', '[gps-camera]');
+        } else {
+            entity.setAttribute('gltf-model', model.url);
+        }
+        entity.setAttribute(
             'gps-entity-place',
-            `latitude: ${place.location.lat}; longitude: ${place.location.lng};`,
+            `latitude: ${model.lat}; longitude: ${model.long};`,
         );
-        model.setAttribute('animation-mixer', '');
-        setModel(model, place);
-        scene.appendChild(model);
-        console.log(model);
-    });
-}
+
+        return entity;
+    };
+
+    function renderPlaces(places) {
+        let scene = document.querySelector('a-scene');
+        places.forEach((place) => {
+            scene.appendChild(setModel(place));
+        });
+    }
+};
