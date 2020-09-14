@@ -8,20 +8,20 @@ window.onload = () => {
             rotation: '0 0 0',
             url: './data/flag.gltf',
         },
-        // {
-        //     lat: 53.85176,
-        //     long: 27.490791,
-        //     scale: 4,
-        //     rotation: '0 0 0',
-        //     url: './data/flag.gltf',
-        // },
-        // {
-        //     lat: 53.85176,
-        //     long: 27.490791,
-        //     scale: 120,
-        //     type: 'text',
-        //     value: 'No markers around',
-        // },
+        {
+            lat: 53.85176,
+            long: 27.490791,
+            scale: 4,
+            rotation: '0 0 0',
+            url: './data/flag.gltf',
+        },
+        {
+            lat: 53.85176,
+            long: 27.490791,
+            scale: 120,
+            type: 'text',
+            value: 'No markers around',
+        },
     ];
     let places = staticLoadPlaces(coordinates);
     renderPlaces(places);
@@ -69,5 +69,6 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
         setModel(model, place);
         scene.appendChild(model);
+        console.log(model);
     });
 }
