@@ -5,7 +5,7 @@ window.onload = () => {
             lat: 53.850547,
             long: 27.491427,
             scale: 4,
-            rotation: '0 0 0',
+            rotation: '180 0 0',
             url: './data/flag.gltf',
         },
         {
