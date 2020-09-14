@@ -59,6 +59,7 @@ function renderPlaces(places) {
             model.setAttribute('value', place.value);
         } else {
             model = document.createElement('a-entity');
+            model.setAttribute(' gltf-model', place.url);
         }
         model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute(
