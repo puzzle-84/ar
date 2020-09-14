@@ -59,7 +59,7 @@ function renderPlaces(places) {
             model.setAttribute('value', place.value);
         } else {
             model = document.createElement('a-entity');
-            model.setAttribute(' gltf-model', place.url);
+            model.setAttribute('gltf-model', place.url);
         }
         model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute(
@@ -68,8 +68,6 @@ function renderPlaces(places) {
         );
         model.setAttribute('animation-mixer', '');
         setModel(model, place);
-        setTimeout(function () {
-            scene.appendChild(model);
-        }, 1000);
+        scene.appendChild(model);
     });
 }
