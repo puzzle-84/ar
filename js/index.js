@@ -5,14 +5,14 @@ window.onload = () => {
             lat: 53.850547,
             long: 27.491427,
             scale: 4,
-            rotation: '180 0 0',
+            // rotation: '180 0 0',
             url: './data/flag.gltf',
         },
         {
             lat: 53.85176,
             long: 27.490791,
             scale: 4,
-            rotation: '0 0 0',
+            // rotation: '0 0 0',
             url: './data/flag.gltf',
         },
         {
@@ -26,7 +26,7 @@ window.onload = () => {
 
     renderPlaces(coordinates);
 
-    var setModel = function (model) {
+    function setModel(model) {
         const entity =
             model.type === 'text'
                 ? document.createElement('a-text')
@@ -41,6 +41,7 @@ window.onload = () => {
 
         if (model.position) {
             entity.setAttribute('position', model.position);
+            entity.setAttribute('look-at', '[gps-camera]');
         }
         if (model.type === 'text') {
             entity.setAttribute('value', model.value);
@@ -54,7 +55,7 @@ window.onload = () => {
         );
 
         return entity;
-    };
+    }
 
     function renderPlaces(places) {
         let scene = document.querySelector('a-scene');
