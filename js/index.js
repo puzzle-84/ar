@@ -60,7 +60,7 @@ function renderPlaces(places) {
         } else {
             model = document.createElement('a-entity');
         }
-        // model.setAttribute('look-at', '[gps-camera]');
+        model.setAttribute('look-at', '[gps-camera]');
         model.setAttribute(
             'gps-entity-place',
             `latitude: ${place.location.lat}; longitude: ${place.location.lng};`,

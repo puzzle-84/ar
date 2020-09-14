@@ -11,7 +11,7 @@
                 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/';
         </script>
 
-        <script src="./js/index.js?555dd"></script>
+        <script src="./js/index.js?555dddd"></script>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
     </head>
 
@@ -21,7 +21,12 @@
             vr-mode-ui="enabled: false"
             embedded
             arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
-        >
+            ><a-entity
+                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+                scale="5 5 5"
+                position="50 150 0"
+            >
+            </a-entity>
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
     </body>
