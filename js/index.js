@@ -14,9 +14,9 @@ window.onload = () => {
             url: './data/flag.gltf',
         },
         {
-            lat: 53.85192,
-            long: 27.493951,
-            scale: 120,
+            lat: 53.852578,
+            long: 27.49305,
+            scale: 90,
             type: 'text',
             value: 'Belarus forever!',
         },
