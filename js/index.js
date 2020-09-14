@@ -67,6 +67,8 @@ function renderPlaces(places) {
         );
         model.setAttribute('animation-mixer', '');
         setModel(model, place);
-        scene.appendChild(model);
+        setTimeout(function () {
+            scene.appendChild(model);
+        }, 1000);
     });
 }
